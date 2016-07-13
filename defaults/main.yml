@@ -1,0 +1,13 @@
+---
+appzapper_pkg: AppZapper
+appzapper_domain: "com.appzapper.{{ appzapper_pkg }}"
+appzapper_plist:
+  AppleAppsSafe:
+    type: bool
+    value: true
+  DefaultsSet:
+    type: bool
+    value: true
+  ZapEffects:
+    type: bool
+    value: true

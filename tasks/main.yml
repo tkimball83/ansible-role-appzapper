@@ -1,0 +1,16 @@
+---
+- name: Install AppZapper package
+  tags: appzapper
+  homebrew_cask: name={{ appzapper_pkg|lower }}
+                 state=present
+  register: appzapper_homebrew_cask
+  when: appzapper_pkg is defined
+
+- name: Configure AppZapper
+  tags: appzapper
+  osx_defaults: domain={{ appzapper_domain }}
+                key={{ item.key|regex_replace('_', ' ') }}
+                type={{ item.value.type }}
+                value={{ item.value.value }}
+  with_dict: "{{ appzapper_plist|default({}) }}"
+  when: appzapper_homebrew_cask|success
