@@ -14,16 +14,7 @@ Available variables are listed below, along with default values:
 
     appzapper_pkg: AppZapper
     appzapper_domain: "com.appzapper.{{ appzapper_pkg }}"
-    appzapper_plist:
-      AppleAppsSafe:
-        type: bool
-        value: true
-      DefaultsSet:
-        type: bool
-        value: true
-      ZapEffects:
-        type: bool
-        value: true
+    appzapper_plist: {}
 
 ## Dependencies
 
@@ -35,12 +26,21 @@ Available variables are listed below, along with default values:
       roles:
         - role: tkimball83.appzapper
           appzapper_plist:
+            AppleAppsSafe:
+              type: bool
+              value: true
+            DefaultsSet:
+              type: bool
+              value: true
             Registration_Code:
               type: string
               value: APZP-000-000-000-000
             Registration_Name:
               type: string
               value: 'Taylor Kimball'
+            ZapEffects:
+              type: bool
+              value: true
 
 ## License
 
