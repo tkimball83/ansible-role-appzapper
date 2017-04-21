@@ -12,7 +12,7 @@
   osx_defaults:
     domain: "{{ appzapper_domain }}"
     key: "{{ item.key|regex_replace('_', ' ') }}"
-    state: present
+    state: "{{ item.value.state|default('present') }}"
     type: "{{ item.value.type }}"
     value: "{{ item.value.value }}"
   with_dict: "{{ appzapper_plist }}"
