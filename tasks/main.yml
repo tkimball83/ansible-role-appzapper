@@ -1,5 +1,5 @@
 ---
-- name: Ensure that appzapper is installed
+- name: Ensure that the appzapper package is installed
   tags: appzapper
   homebrew_cask:
     name: "{{ appzapper_pkg|lower }}"
@@ -7,7 +7,7 @@
   register: appzapper_homebrew_cask
   when: appzapper_pkg is defined
 
-- name: Apply appzapper configuration
+- name: Applying appzapper configurations
   tags: appzapper
   osx_defaults:
     domain: "{{ appzapper_domain }}"
