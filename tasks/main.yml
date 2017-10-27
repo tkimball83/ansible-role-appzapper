@@ -1,6 +1,7 @@
 ---
 - name: Ensure that the appzapper package is installed
   tags: appzapper
+  become: true
   homebrew_cask:
     name: "{{ appzapper_pkg|lower }}"
     state: present
@@ -16,5 +17,10 @@
     type: "{{ item.value.type }}"
     value: "{{ item.value.value }}"
   with_dict: "{{ appzapper_plist }}"
-  when: appzapper_homebrew_cask|success
+  when:
+    - appzapper_domain is defined
+    - item.key is defined
+    - item.value.type is defined
+    - item.value.value is defined
+    - appzapper_homebrew_cask|success
 ...
