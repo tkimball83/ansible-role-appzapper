@@ -1,7 +1,6 @@
 ---
 - name: Ensure that the appzapper package is installed
   tags: appzapper
-  become: true
   homebrew_cask:
     name: "{{ appzapper_pkg|lower }}"
     state: present
