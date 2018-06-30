@@ -1,5 +1,5 @@
 ---
-appzapper_pkg: AppZapper
-appzapper_domain: "com.appzapper.{{ appzapper_pkg }}"
 appzapper_defaults: {}
+appzapper_domain: "com.appzapper.{{ appzapper_package }}"
+appzapper_package: AppZapper
 ...
