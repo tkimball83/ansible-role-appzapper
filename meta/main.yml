@@ -1,6 +1,7 @@
 ---
 dependencies: []
 galaxy_info:
+  role_name: appzapper
   author: tkimball83
   description: macOS - The uninstaller Apple forgot
   license: GPLv3
