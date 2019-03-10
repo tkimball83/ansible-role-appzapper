@@ -14,7 +14,7 @@ This role requires homebrew and homebrew cask to be installed
 
 Available variables are listed below, along with default values:
 
-    appzapper_defaults: {}
+    appzapper_defaults: []
     appzapper_domain: "com.appzapper.{{ appzapper_package }}"
     appzapper_package: AppZapper
 
@@ -29,19 +29,19 @@ None
       roles:
         - role: tkimball83.appzapper
           appzapper_defaults:
-            AppleAppsSafe:
+            - name: AppleAppsSafe
               type: bool
               value: true
-            DefaultsSet:
+            - name: DefaultsSet
               type: bool
               value: true
-            Registration_Code:
+            - name: "Registration Code"
               type: string
               value: APZP-000-000-000-000
-            Registration_Name:
+            - name: "Registration Name"
               type: string
               value: 'Taylor Kimball'
-            ZapEffects:
+            - name: ZapEffects
               type: bool
               value: true
 
